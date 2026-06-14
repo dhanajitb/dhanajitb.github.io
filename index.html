@@ -1,0 +1,521 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Dhanajit Brahma</title>
+  <meta name="author" content="Dhanajit Brahma">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+    <span class="icon-sun">&#9728;</span>
+    <span class="icon-moon">&#9790;</span>
+  </button>
+  <script>
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme');
+      var next = (current === 'dark') ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+  </script>
+
+  <!-- Navigation Bar -->
+  <nav class="nav-bar">
+    <div class="nav-inner">
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#news">News</a>
+      <a class="nav-link" href="#research">Research</a>
+      <a class="nav-link" href="#publications">Publications</a>
+      <a class="nav-link" href="#education">Education</a>
+      <a class="nav-link" href="#experience">Experience</a>
+      <a class="nav-link" href="#achievements">Achievements</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </div>
+  </nav>
+  <script>
+    (function () {
+      var sections = document.querySelectorAll('[id]');
+      var navLinks = document.querySelectorAll('.nav-link');
+      function onScroll() {
+        var scrollY = window.scrollY + 70;
+        var current = '';
+        sections.forEach(function (sec) {
+          if (sec.offsetTop <= scrollY) {
+            current = sec.getAttribute('id');
+          }
+        });
+        navLinks.forEach(function (link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      }
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+    })();
+  </script>
+
+  <table
+    style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+
+          <!-- ===== ABOUT ===== -->
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr style="padding:0px">
+                <td id="about" style="padding:2.5%;width:63%;vertical-align:middle">
+                  <p class="name" style="text-align: center;">Dhanajit Brahma</p>
+                  <p>
+                    I am a postdoctoral associate at <a href="https://duke.edu/">Duke University</a>, where I work under
+                    the supervision of <a href="https://ece.duke.edu/people/ricardo-henao/">Prof. Ricardo Henao</a>.
+                    I completed my Ph.D. in Computer Science and Engineering at <a
+                      href="https://www.cse.iitk.ac.in/">IIT Kanpur</a> under the guidance of <a
+                      href="https://www.cse.iitk.ac.in/users/piyush/">Prof. Piyush Rai</a>.
+                    I have also worked as a research consultant at <a href="https://www.kaust.edu.sa/">KAUST</a>.
+                    My current research interests focus on developing algorithms for causal inference as well as
+                    advancing methodologies in machine learning more broadly.
+                  </p>
+                  <p style="text-align:center">
+                    <a href="mailto:dhanajit.brahma@duke.edu">Email</a> &nbsp;/&nbsp;
+                    <a href="https://scholar.google.com/citations?user=3PfwL2IAAAAJ">Scholar</a> &nbsp;/&nbsp;
+                    <a href="https://dblp.org/pid/235/5479.html">DBLP</a> &nbsp;/&nbsp;
+                    <a href="https://github.com/dhanajitb">Github</a>
+                  </p>
+                </td>
+                <td style="padding:2.5%;width:37%;max-width:37%">
+                  <div style="width:180px;height:210px;border-radius:50%;overflow:hidden;margin:0 auto;">
+                    <a href="images/dhanajit-professional.jpg"><img style="width:100%;height:100%;object-fit:cover;"
+                        alt="profile photo" src="images/dhanajit-professional.jpg"></a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- ===== NEWS ===== -->
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td id="news" style="padding:16px;width:100%;vertical-align:middle">
+                  <h2 class="section-heading">News</h2>
+                  <ul class="news-list">
+                    <li class="news-item">
+                      <span class="news-date">May 2026</span>
+                      <span class="news-text">Our paper "SAGE: A Novelty Gate for Efficient Memory Evolution in Agentic LLMs" is now available on <a href="https://arxiv.org/abs/2605.30711">arXiv</a>. Code is available on <a href="https://github.com/swang1024/SAGE">GitHub</a>.</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">Apr 2026</span>
+                      <span class="news-text">Our paper, "Calibrating Model-Based Evaluation Metrics for Summarization"
+                        has been accepted by <a href="https://2026.aclweb.org/">ACL 2026</a>.</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">Jan 2026</span>
+                      <span class="news-text">Our paper, "Neural Doubly Robust Proximal Causal Estimation" has been
+                        accepted by <a href="https://virtual.aistats.org/Conferences/2026">AISTATS 2026</a>.</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">Dec 2025</span>
+                      <span class="news-text">I presented our paper "Coupling Generative Modeling and an Autoencoder
+                        with the Causal Bridge" at <a href="https://neurips.cc/Conferences/2025">NeurIPS 2025</a>, San
+                        Diego, CA, US.</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">Sep 2025</span>
+                      <span class="news-text">Our paper, "Coupling Generative Modeling and an Autoencoder with the
+                        Causal Bridge" has been accepted by <a href="https://neurips.cc/Conferences/2025">NeurIPS
+                          2025</a>.</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">Oct 2024</span>
+                      <span class="news-text">Joined Duke University as a Postdoctoral Associate working under Prof.
+                        Ricardo Henao.</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">Feb 2024</span>
+                      <span class="news-text">Invited to ACM India <a
+                          href="https://event.india.acm.org/arcs/home/#">ARCS</a>/<a
+                          href="https://event.india.acm.org/annualevent/home/">Annual Event 2024</a> at NISER,
+                        Bhubaneswar, to present our paper titled "A Probabilistic Framework for Lifelong Test-Time
+                        Adaptation".</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">Jun 2023</span>
+                      <span class="news-text">I presented our paper "A Probabilistic Framework for Lifelong Test-Time
+                        Adaptation" at <a href="https://cvpr2023.thecvf.com/">CVPR 2023</a>, Vancouver, Canada.</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">May 2023</span>
+                      <span class="news-text">I received Google Travel Grant for presenting our paper "A Probabilistic
+                        Framework for Lifelong Test-Time Adaptation" at <a href="https://cvpr2023.thecvf.com/">CVPR
+                          2023</a>.</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">Feb 2023</span>
+                      <span class="news-text">Our paper, "A Probabilistic Framework for Lifelong Test-Time Adaptation"
+                        has been accepted by <a href="https://cvpr2023.thecvf.com/">CVPR 2023</a>.</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">Oct 2021</span>
+                      <span class="news-text">Our paper titled "Fine-Grained Emotion Prediction by Modeling Emotion
+                        Definitions" received the Best Student Paper award in <a
+                          href="https://www.acii-conf.net/2021/">ACII 2021</a>.</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">Aug 2021</span>
+                      <span class="news-text">I presented our work virtually at the <a
+                          href="https://sites.google.com/view/sscl-workshop-ijcai-2021/">CSSL workshop, IJCAI
+                          2021</a>.</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">Jul 2021</span>
+                      <span class="news-text">Our paper, "Hypernetworks for Continual Semi-Supervised Learning" received
+                        the Best Student Paper award at the <a
+                          href="https://sites.google.com/view/sscl-workshop-ijcai-2021/">CSSL workshop, IJCAI
+                          2021</a>.</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">Jun 2020</span>
+                      <span class="news-text">Our team (my thesis supervisor and me) is one of the winners of Qualcomm
+                        Innovation Fellowship 2020 for the innovation titled "Continual Semi-Supervised Multi-Objective
+                        Learning".</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">Feb 2020</span>
+                      <span class="news-text">I presented our work on "Zero-shot learning" in <a
+                          href="https://aaai.org/conference/aaai/aaai-20/">AAAI 2020</a>, New York, USA.</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">Nov 2019</span>
+                      <span class="news-text">Our paper titled "Meta-learning for generalized zero-shot learning" has
+                        been accepted by <a href="https://aaai.org/conference/aaai/aaai-20/">AAAI 2020</a>.</span>
+                    </li>
+                    <li class="news-item">
+                      <span class="news-date">Nov 2019</span>
+                      <span class="news-text">Our paper titled "Deep Attentive Ranking Networks for Learning to Order
+                        Sentences" has been accepted by <a href="https://aaai.org/conference/aaai/aaai-20/">AAAI
+                          2020</a>.</span>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- ===== RESEARCH INTERESTS ===== -->
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td id="research" style="padding:16px;width:100%;vertical-align:middle">
+                  <h2 class="section-heading">Research Interests</h2>
+                  <ul class="tag-list">
+                    <li class="tag-item">Machine Learning</li>
+                    <li class="tag-item">Probabilistic Machine Learning</li>
+                    <li class="tag-item">Causal Inference</li>
+                    <li class="tag-item">Deep Learning</li>
+                    <li class="tag-item">Computer Vision</li>
+                    <li class="tag-item">Natural Language Processing</li>
+                    <li class="tag-item">Agentic Memory Systems</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- ===== PUBLICATIONS ===== -->
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td id="publications" style="padding:16px;width:100%;vertical-align:middle">
+                  <h2 class="section-heading">Publications</h2>
+
+                  <p class="exp-subheading">Preprints</p>
+                  <div class="pub-list">
+                    <div class="pub-card">
+                      <div class="pub-title"><a href="https://arxiv.org/abs/2605.30711">SAGE: A Novelty Gate for Efficient Memory Evolution in Agentic LLMs</a></div>
+                      <div class="pub-authors">With: <a href="https://arxiv.org/search/cs?searchtype=author&query=Wang,+S">Sijia Wang</a>, <a href="https://ece.duke.edu/people/ricardo-henao/">Ricardo Henao</a></div>
+                      <span class="pub-venue">arXiv 2026</span>
+                      <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2605.30711">arXiv</a> / <a href="https://github.com/swang1024/SAGE">GitHub</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="exp-subheading">Conference &amp; Journal Publications</p>
+                  <div class="pub-list">
+
+                    <div class="pub-card">
+                      <div class="pub-title">Calibrating Model-Based Evaluation Metrics for Summarization</div>
+                      <div class="pub-authors">With: Hongye Liu, <a
+                          href="https://ece.duke.edu/people/ricardo-henao/">Ricardo Henao</a></div>
+                      <span class="pub-venue">ACL 2026</span>
+                    </div>
+
+                    <div class="pub-card">
+                      <div class="pub-title">Neural Doubly Robust Proximal Causal Estimation</div>
+                      <div class="pub-authors">With: Ruolin Meng, <a
+                          href="https://ece.duke.edu/people/ricardo-henao/">Ricardo Henao</a>, Lawrence Carin</div>
+                      <span class="pub-venue">AISTATS 2026</span>
+                    </div>
+
+                    <div class="pub-card">
+                      <div class="pub-title"><a href="https://arxiv.org/abs/2509.25599">Coupling Generative Modeling and
+                          an Autoencoder with the Causal Bridge</a></div>
+                      <div class="pub-authors">With: Ruolin Meng, Ming-Yu Chung, <a
+                          href="https://ece.duke.edu/people/ricardo-henao/">Ricardo Henao</a>, Lawrence Carin</div>
+                      <span class="pub-venue">NeurIPS 2025</span>
+                      <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2509.25599">arXiv</a> / <a
+                          href="https://openreview.net/forum?id=gGfWAC7sqg">NeurIPS</a>
+                      </div>
+                    </div>
+
+                    <div class="pub-card">
+                      <div class="pub-title"><a href="https://arxiv.org/abs/2212.09713">A Probabilistic Framework for
+                          Lifelong Test-Time Adaptation</a></div>
+                      <div class="pub-authors">With: <a href="https://www.cse.iitk.ac.in/users/piyush/">Piyush Rai</a>
+                      </div>
+                      <span class="pub-venue">CVPR 2023</span>
+                      <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2212.09713">arXiv</a> / <a
+                          href="https://openaccess.thecvf.com/content/CVPR2023/papers/Brahma_A_Probabilistic_Framework_for_Lifelong_Test-Time_Adaptation_CVPR_2023_paper.pdf">PDF</a>
+                        / <a href="https://www.youtube.com/watch?v=AdHwnYMHbkQ&ab_channel=DhanajitBrahma">Video</a> / <a
+                          href="https://drive.google.com/file/d/1JGq791G3nLk6xjzPCOO3gmCji0KmKoxy/view?usp=sharing">Poster</a>
+                      </div>
+                    </div>
+
+                    <div class="pub-card">
+                      <div class="pub-title"><a href="https://arxiv.org/pdf/2107.12135.pdf">Fine-Grained Emotion
+                          Prediction by Modeling Emotion Definitions</a></div>
+                      <div class="pub-authors">With: <a href="https://gargisingh7.github.io/">Gargi Singh</a>, <a
+                          href="https://www.cse.iitk.ac.in/users/piyush/">Piyush Rai</a>, <a
+                          href="https://ashutosh-modi.github.io/">Ashutosh Modi</a></div>
+                      <span class="pub-venue">ACII 2021</span>
+                      <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2107.12135">arXiv</a>
+                      </div>
+                    </div>
+
+                    <div class="pub-card">
+                      <div class="pub-title"><a href="https://arxiv.org/pdf/2110.01856.pdf">Hypernetworks for Continual
+                          Semi-Supervised Learning</a></div>
+                      <div class="pub-authors">With: <a href="https://sites.google.com/view/vinaycse/home">Vinay Kumar
+                          Verma</a>, <a href="https://www.cse.iitk.ac.in/users/piyush/">Piyush Rai</a></div>
+                      <span class="pub-venue">CSSL@IJCAI 2021</span>
+                      <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2110.01856">arXiv</a>
+                      </div>
+                    </div>
+
+                    <div class="pub-card">
+                      <div class="pub-title"><a href="https://arxiv.org/pdf/1909.04344.pdf">A Meta-Learning Framework
+                          for Generalized Zero-Shot Learning</a></div>
+                      <div class="pub-authors">With: <a href="https://sites.google.com/view/vinaycse/home">Vinay Kumar
+                          Verma</a>, <a href="https://www.cse.iitk.ac.in/users/piyush/">Piyush Rai</a></div>
+                      <span class="pub-venue">AAAI 2020</span>
+                      <div class="pub-links">
+                        <a href="https://arxiv.org/abs/1909.04344">arXiv</a>
+                      </div>
+                    </div>
+
+                    <div class="pub-card">
+                      <div class="pub-title"><a href="https://arxiv.org/pdf/2001.00056.pdf">Deep Attentive Ranking
+                          Networks for Learning to Order Sentences</a></div>
+                      <div class="pub-authors">With: <a href="https://www.cse.iitk.ac.in/users/kpawan/">Pawan Kumar</a>,
+                        <a href="https://www.iitk.ac.in/new/dr-harish-karnick">Harish Karnick</a>, <a
+                          href="https://www.cse.iitk.ac.in/users/piyush/">Piyush Rai</a>
+                      </div>
+                      <span class="pub-venue">AAAI 2020</span>
+                      <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2001.00056">arXiv</a> / <a
+                          href="https://www.cse.iitk.ac.in/users/dhanajit/files/supplementary.pdf">supplementary</a>
+                      </div>
+                    </div>
+
+                    <div class="pub-card">
+                      <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/10192334">Text-based
+                          Fine-Grained Emotion Prediction</a></div>
+                      <div class="pub-authors">With: Gargi Singh, <a
+                          href="https://www.cse.iitk.ac.in/users/piyush/">Piyush Rai</a>, <a
+                          href="https://ashutosh-modi.github.io/">Ashutosh Modi</a></div>
+                      <span class="pub-venue">IEEE TAC 2023</span>
+                    </div>
+
+                    <div class="pub-card">
+                      <div class="pub-title"><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8857">An
+                          Integrated Approach for Identification of Functionally Similar MicroRNAs in Colorectal
+                          Cancer</a></div>
+                      <div class="pub-authors">With: <a href="http://home.iitj.ac.in/~sushmitapaul/">Sushmita Paul</a>
+                      </div>
+                      <span class="pub-venue">IEEE/ACM TCBB 2017</span>
+                    </div>
+
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- ===== EDUCATION ===== -->
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td id="education" style="padding:16px;width:100%;vertical-align:middle">
+                  <h2 class="section-heading">Education</h2>
+
+                  <div class="edu-card">
+                    <div class="edu-degree">Ph.D. in Computer Science and Engineering</div>
+                    <div class="edu-school"><a href="https://www.cse.iitk.ac.in/">Indian Institute of Technology
+                        Kanpur</a></div>
+                    <span class="edu-year">2024</span>
+                  </div>
+
+                  <div class="edu-card">
+                    <div class="edu-degree">B.Tech. in BISS Computer Science and Engineering</div>
+                    <div class="edu-school"><a href="https://iitj.ac.in/">Indian Institute of Technology Jodhpur</a>
+                    </div>
+                    <span class="edu-year">2017</span>
+                  </div>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- ===== EXPERIENCE ===== -->
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td id="experience" style="padding:16px;width:100%;vertical-align:middle">
+                  <h2 class="section-heading">Academic Experience</h2>
+
+                  <p class="exp-subheading">Teaching Assistant</p>
+                  <ul class="exp-list">
+                    <li class="exp-item">CS776: Deep Learning For Computer Vision</li>
+                    <li class="exp-item">CS771: Introduction to Machine Learning</li>
+                    <li class="exp-item">CS698X: Topics in Probabilistic Modeling and Inference</li>
+                    <li class="exp-item">CS647: Advanced Topics in Algorithms and Data Structures</li>
+                    <li class="exp-item">CS673: Machine Translation</li>
+                    <li class="exp-item">CS251: Computing Laboratory - I</li>
+                  </ul>
+
+                  <p class="exp-subheading">Reviewer for journals and conferences</p>
+                  <ul class="exp-list">
+                    <li class="exp-item"><strong>IJCV</strong> &mdash; International Journal of Computer Vision &mdash;
+                      2025</li>
+                    <li class="exp-item"><strong>TPAMI</strong> &mdash; IEEE Transactions on Pattern Analysis and
+                      Machine Intelligence &mdash; 2021, 2023</li>
+                    <li class="exp-item"><strong>AAAI</strong> &mdash; Association for the Advancement of Artificial
+                      Intelligence &mdash; 2021, 2022, 2023, 2024, 2025</li>
+                    <li class="exp-item"><strong>NeurIPS</strong> &mdash; Neural Information Processing Systems &mdash;
+                      2022, 2023, 2024, 2025</li>
+                    <li class="exp-item"><strong>ICLR</strong> &mdash; International Conference on Learning
+                      Representations &mdash; 2023, 2024, 2026</li>
+                    <li class="exp-item"><strong>ICML</strong> &mdash; International Conference on Machine Learning
+                      &mdash; 2024, 2025, 2026</li>
+                    <li class="exp-item"><strong>AISTATS</strong> &mdash; International Conference on Artificial
+                      Intelligence and Statistics &mdash; 2026</li>
+                    <li class="exp-item"><strong>ACML</strong> &mdash; Asian Conference on Machine Learning &mdash; 2022
+                    </li>
+                    <li class="exp-item"><strong>CoLLAs</strong> &mdash; Conference on Lifelong Learning Agents &mdash;
+                      2024, 2026</li>
+                  </ul>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- ===== ACHIEVEMENTS ===== -->
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td id="achievements" style="padding:16px;width:100%;vertical-align:middle">
+                  <h2 class="section-heading">Academic Achievements</h2>
+                  <ul class="achievement-list">
+                    <li class="achievement-item">
+                      <div class="achievement-icon">&#9733;</div>
+                      <div class="achievement-text">Winner of <strong>Qualcomm Innovation Fellowship India 2020</strong>
+                        and awarded a research grant for the innovation titled "Continual Semi-Supervised
+                        Multi-Objective Learning"</div>
+                    </li>
+                    <li class="achievement-item">
+                      <div class="achievement-icon">&#9733;</div>
+                      <div class="achievement-text">Awarded <strong>Best Student Paper Award</strong> for the paper
+                        titled "Hypernetworks for Continual Semi-Supervised Learning" at CSSL@IJCAI 2021</div>
+                    </li>
+                    <li class="achievement-item">
+                      <div class="achievement-icon">&#9733;</div>
+                      <div class="achievement-text">One of the <strong>top 20 teams</strong> in Microsoft AI Challenge
+                        India 2018 on Machine Reading Comprehension</div>
+                    </li>
+                    <li class="achievement-item">
+                      <div class="achievement-icon">&#9733;</div>
+                      <div class="achievement-text">Awarded <strong>Certificate of Academic Distinction</strong> for
+                        securing maximum CPI among all department students during B.Tech. at IIT Jodhpur for two
+                        consecutive academic years, 2014-2015 and 2015-2016</div>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- ===== CONTACT ===== -->
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td id="contact" style="padding:16px;width:100%;vertical-align:middle">
+                  <h2 class="section-heading">Contact</h2>
+                  <p>Email: dhanajit[dot]brahma[at]duke[dot]edu</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Footer -->
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;margin-bottom:20px;">
+            <tbody>
+              <tr>
+                <td style="padding:16px;width:100%;vertical-align:middle">
+                  <p style="text-align:center; font-size:12px; color:var(--text-secondary);">
+                    &copy; 2026 Dhanajit Brahma
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
